@@ -5,3 +5,5 @@ StudySystem_Client/node_modules/
 StudySystem_Client/platforms/
 StudySystem_Client/plugins/
 .idea/
+StudySystem_Server_Java/com.study.system.server/target/
+
