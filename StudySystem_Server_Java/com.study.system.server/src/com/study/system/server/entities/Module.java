@@ -12,7 +12,8 @@ import java.util.Set;
 public class Module {
     @Id
     @Column(name = "MODULE_ID")
-    private String moduleId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int moduleId;
 
     @Column(name = "NAME")
     private String name;
@@ -41,11 +42,11 @@ public class Module {
     public Module() {
     }
 
-    public String getModuleId() {
+    public int getModuleId() {
         return moduleId;
     }
 
-    public void setModuleId(String moduleId) {
+    public void setModuleId(int moduleId) {
         this.moduleId = moduleId;
     }
 

@@ -11,7 +11,8 @@ import javax.persistence.*;
 public class Teacher {
     @Id
     @Column(name = "TEACHER_ID")
-    private String teacherId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int teacherId;
 
     @Column(name = "NAME")
     private String name;
@@ -34,11 +35,11 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getTeacherId() {
+    public int getTeacherId() {
         return teacherId;
     }
 
-    public void setTeacherId(String teacherId) {
+    public void setTeacherId(int teacherId) {
         this.teacherId = teacherId;
     }
 

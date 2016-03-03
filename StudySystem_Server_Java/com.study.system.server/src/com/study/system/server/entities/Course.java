@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -21,7 +23,8 @@ import javax.persistence.Table;
 public class Course {
     @Id
     @Column(name = "COURSE_ID")
-    private String courseId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int courseId;
 
     @Column(name = "NAME")
     private String name;
@@ -48,15 +51,15 @@ public class Course {
     	
     }
     
-    public Course(String courseId) {
+    public Course(int courseId) {
         this.courseId = courseId;
     }
 
-    public String getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(String courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 

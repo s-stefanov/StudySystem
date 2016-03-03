@@ -2,15 +2,20 @@ package com.study.system.server.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQuery (name="User.findById", query="SELECT u FROM User u WHERE u.userId = :userId")
 @Table(name = "USERS", schema = "StudySystem")
 public class User {
     @Id
     @Column(name = "USER_ID")
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
 
     @Column(name="USERNAME")
     private String userName;
@@ -19,17 +24,17 @@ public class User {
     private String password;
 
     @Column(name="STATUS")
-    private UserStatus status;
+    private int status;
 
     public User()
     {
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -49,11 +54,11 @@ public class User {
         this.password = password;
     }
 
-    public UserStatus getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(UserStatus status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

@@ -3,7 +3,7 @@
 	<persistence-unit name="StudySystem" transaction-type="RESOURCE_LOCAL">
 		<class>com.study.system.server.entities.Course</class>
 		<class>com.study.system.server.entities.Homework</class>
-		<class>com.study.system.server.entities.IdCounter</class>
+		<!-- <class>com.study.system.server.entities.IdCounter</class> -->
 		<class>com.study.system.server.entities.Module</class>
 		<class>com.study.system.server.entities.Teacher</class>
 		<class>com.study.system.server.entities.User</class>	
@@ -13,12 +13,15 @@
 			<property name="eclipselink.target-database" value="MYSQL"/>
 			<property name="eclipselink.ddl-generation" value="create-tables"/>
 			<property name="eclipselink.logging.level" value="INFO"/>
+			<property name="eclipselink.logging.level.sql" value="INFO"/>
+			<property name="eclipselink.logging.parameters" value="true"/>
+			<property name="eclipselink.logging.exceptions" value="true"/>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/StudySystemDB"/>
+				value="jdbc:mysql://localhost:3306/StudySystem"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value=""/>
+			<property name="javax.persistence.jdbc.password" value="password"/>
 		</properties>
 	</persistence-unit>
 		

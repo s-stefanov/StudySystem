@@ -10,7 +10,8 @@ import javax.persistence.*;
 public class Student {
     @Id
     @Column(name = "STUDENT_ID")
-    private String studentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int studentId;
 
     @Column(name = "NAME")
     private String name;
@@ -33,11 +34,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(String studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 

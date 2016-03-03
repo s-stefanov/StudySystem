@@ -11,7 +11,8 @@ import java.util.Date;
 public class Homework {
     @Id
     @Column(name = "HOMEWORK_ID")
-    private String homeworkId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int homeworkId;
 
     @Column(name = "URL")
     private String url;
@@ -27,11 +28,11 @@ public class Homework {
     public Homework() {
     }
 
-    public String getHomeworkId() {
+    public int getHomeworkId() {
         return homeworkId;
     }
 
-    public void setHomeworkId(String homeworkId) {
+    public void setHomeworkId(int homeworkId) {
         this.homeworkId = homeworkId;
     }
 

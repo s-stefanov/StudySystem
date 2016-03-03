@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "COUNTERS", schema = "StudySystem")
 public class IdCounter {
     @Id
-    private String id;
+    private int id;
 
     @Column(name="NAME", unique = true)
     private String name;
@@ -23,11 +23,11 @@ public class IdCounter {
     public IdCounter(){
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
