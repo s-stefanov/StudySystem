@@ -7,4 +7,6 @@ StudySystem_Client/plugins/
 .idea/
 StudySystem_Server_Java/com.study.system.server/target
 .DS_Store
-
+StudySystem_Server_Java/com.study.system.server/.project
+StudySystem_Server_Java/com.study.system.server/.classpath
+StudySystem_Server_Java/com.study.system.server/.settings
